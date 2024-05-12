@@ -9,14 +9,23 @@ class LoginFormLocators:
 class MainLocators:
     TITLE = ("css selector", "span[data-test='title']")
     CARDS = ("css selector", "div[data-test='inventory-item']")
-    SAUCE_LABS_BACKPACK = ("css selector", "button[data-test='add-to-cart-sauce-labs-backpack']")
-    REMOVE_SAUCE_LABS_BACKPACK = ("css selector", "button[data-test='remove-sauce-labs-backpack']")
+    SAUCE_LABS_BACKPACK = (
+        "css selector",
+        "button[data-test='add-to-cart-sauce-labs-backpack']",
+    )
+    REMOVE_SAUCE_LABS_BACKPACK = (
+        "css selector",
+        "button[data-test='remove-sauce-labs-backpack']",
+    )
     # CART_BUTTON = ("css selector", "a[data-test='shopping-cart-link']") # to remove!
     COUNT_ITEMS = ("css selector", "span[data-test='shopping-cart-badge']")
     BURGER_MENU_BUTTON = ("css selector", "div[class='bm-burger-button']")
+    ABOUT_BUTTON = ("css selector", "a[data-test='about-sidebar-link']")
     LOGOUT_BUTTON = ("css selector", "a[data-test='logout-sidebar-link']")
+    RESET_APP_STATE_BUTTON = ("css selector", "a[data-test='reset-sidebar-link']")
     PRODUCT_SELECTOR = ("css selector", "select[data-test='product-sort-container']")
     PRICE_VALUE = ("css selector", "div[data-test='inventory-item-price']")
+    PRODUCT_NAME = ("css selector", "div[data-test='inventory-item-name']")
 
 
 class CartLocators:
