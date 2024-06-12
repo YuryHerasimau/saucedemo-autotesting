@@ -4,6 +4,7 @@ from functions.functions import sort_list_by_price, sort_list_by_name
 import pytest
 import allure
 import os
+import random
 from dotenv import load_dotenv
 
 
@@ -29,8 +30,7 @@ class TestMainPage:
         ), f"Incorrect URL. Expected: {self.main_url}, Actual: {driver.current_url}"
         page.logout()
         assert (
-            driver.current_url != self.main_url
-            and driver.current_url == self.base_url
+            driver.current_url != self.main_url and driver.current_url == self.base_url
         )
         value = page.check_element_is_displayed()
         assert value is True, "Login form is not displayed"
@@ -104,3 +104,19 @@ class TestMainPage:
         page.reset_app_state()
         value = page.check_element_is_not_present()
         assert value is True, "The element is present in the DOM tree"
+
+    @allure.title("test for checking product card names")
+    @allure.severity(allure.severity_level.CRITICAL)
+    # @pytest.mark.parametrize("value", [random.choice(range(1, 7))])
+    @pytest.mark.parametrize("value", main_data.card_contents)
+    def test_product_card_name(self, driver, value):
+        """Проверка названий карточек товаров"""
+        page = MainPage(driver, self.base_url)
+        page.open()
+        page.login()
+        # print(page.check_card(value[0]))
+        card_names = page.get_name()
+        expected_text = value[1]
+        assert (
+            card_names[value[0]] == expected_text
+        ), f"Unexpected text. Expected: {expected_text}, Actual: {card_names[value[0]]}"

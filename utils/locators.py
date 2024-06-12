@@ -26,6 +26,13 @@ class MainLocators:
     PRODUCT_SELECTOR = ("css selector", "select[data-test='product-sort-container']")
     PRICE_VALUE = ("css selector", "div[data-test='inventory-item-price']")
     PRODUCT_NAME = ("css selector", "div[data-test='inventory-item-name']")
+    CARD_LAMBDA = lambda self, value: (
+        "css selector",
+        f"div[data-test='inventory-item']:nth-child({value})",
+    )
+
+    # def get_card(self, value):
+    #     return "css selector", f"div[data-test='inventory-item']:nth-child({value})"
 
 
 class CartLocators:

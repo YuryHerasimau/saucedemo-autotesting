@@ -11,6 +11,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
 @allure.epic("Testing login page")
 class TestLogin:
     base_url = os.getenv("BASE_URL")

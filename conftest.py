@@ -8,6 +8,7 @@ from datetime import datetime
 
 # HOST = os.getenv("DEV") if os.environ["STAGE"] == "dev" else os.getenv("PROD")
 
+
 @pytest.fixture()
 def driver():
     chrome_options = webdriver.ChromeOptions()

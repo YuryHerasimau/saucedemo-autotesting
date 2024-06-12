@@ -1,0 +1,1 @@
+('css selector', "div[data-test='inventory-item']:nth-child(5)")

@@ -67,3 +67,7 @@ class MainPage(BasePage):
     def reset_app_state(self):
         self.click_on_element(self.main_locators.BURGER_MENU_BUTTON)
         self.click_on_element(self.main_locators.RESET_APP_STATE_BUTTON)
+
+    def check_card(self, value):
+        # return self.main_locators.get_card(value=value)
+        return self.main_locators.CARD_LAMBDA(value)
